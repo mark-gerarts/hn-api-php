@@ -62,6 +62,21 @@ final class HackerNewsApiDescription
                     'httpMethod' => 'GET',
                     'uri' => 'beststories.json',
                     'responseModel' => 'jsonResponse'
+                ],
+                'getAskStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'askstories.json',
+                    'responseModel' => 'jsonResponse'
+                ],
+                'getShowStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'showstories.json',
+                    'responseModel' => 'jsonResponse'
+                ],
+                'getJobStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'jobstories.json',
+                    'responseModel' => 'jsonResponse'
                 ]
             ],
 

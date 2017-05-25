@@ -1,0 +1,27 @@
+{
+    "name": "mgerarts/hn-api-php",
+    "description": "A PHP wrapper for the Hacker news API, using Guzzle",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "Hacker News",
+        "API"
+    ],
+    "authors": [
+        {
+            "name": "Mark Gerarts",
+            "email": "mark.gerarts@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle-services": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "HackerNewsApi\\":  ["src/"]
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.2"
+    }
+}

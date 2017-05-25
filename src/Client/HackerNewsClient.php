@@ -62,7 +62,7 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getNewStories(): array
     {
-        // TODO: Implement getNewStories() method.
+        return $this->client->getNewStories()->toArray();
     }
 
     /**
@@ -70,7 +70,7 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getTopStories(): array
     {
-        // TODO: Implement getTopStories() method.
+        return $this->client->getTopStories()->toArray();
     }
 
     /**
@@ -78,7 +78,7 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getBestStories(): array
     {
-        // TODO: Implement getBestStories() method.
+        return $this->client->getBestStories()->toArray();
     }
 
     /**

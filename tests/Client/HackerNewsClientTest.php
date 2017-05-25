@@ -49,4 +49,40 @@ class HackerNewsClientTest extends TestCase
 
         $this->assertEquals(1234, $client->getMaxItem());
     }
+
+    public function testGetNewStories()
+    {
+        $mock = $this->createMock(HackerNewsServiceClient::class);
+        $mock->expects($this->any())
+            ->method('__call')
+            ->with('getNewStories')
+            ->willReturn(new Result([1, 2, 3]));
+        $client = new HackerNewsClient($mock);
+
+        $this->assertEquals([1, 2, 3], $client->getNewStories());
+    }
+
+    public function testGetTopStories()
+    {
+        $mock = $this->createMock(HackerNewsServiceClient::class);
+        $mock->expects($this->any())
+            ->method('__call')
+            ->with('getTopStories')
+            ->willReturn(new Result([1, 2, 3]));
+        $client = new HackerNewsClient($mock);
+
+        $this->assertEquals([1, 2, 3], $client->getTopStories());
+    }
+
+    public function testGetBestStories()
+    {
+        $mock = $this->createMock(HackerNewsServiceClient::class);
+        $mock->expects($this->any())
+            ->method('__call')
+            ->with('getBestStories')
+            ->willReturn(new Result([1, 2, 3]));
+        $client = new HackerNewsClient($mock);
+
+        $this->assertEquals([1, 2, 3], $client->getBestStories());
+    }
 }

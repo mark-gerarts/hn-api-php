@@ -14,6 +14,9 @@ use GuzzleHttp\Command\ResultInterface;
  * @method ResultInterface getItem(array $parameters)
  * @method ResultInterface getUser(array $parameters)
  * @method ResultInterface getMaxItem()
+ * @method ResultInterface getNewStories()
+ * @method ResultInterface getTopStories()
+ * @method ResultInterface getBestStories()
  */
 class HackerNewsServiceClient extends GuzzleClient
 {

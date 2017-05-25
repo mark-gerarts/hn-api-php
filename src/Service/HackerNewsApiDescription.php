@@ -47,6 +47,21 @@ final class HackerNewsApiDescription
                     'httpMethod' => 'GET',
                     'uri' => 'maxitem.json',
                     'responseModel' => 'scalar',
+                ],
+                'getNewStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'newstories.json',
+                    'responseModel' => 'jsonResponse'
+                ],
+                'getTopStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'topstories.json',
+                    'responseModel' => 'jsonResponse'
+                ],
+                'getBestStories' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'beststories.json',
+                    'responseModel' => 'jsonResponse'
                 ]
             ],
 

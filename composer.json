@@ -21,7 +21,13 @@
             "HackerNewsApi\\":  ["src/"]
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "HackerNewsApi\\Tests": "tests/"
+        }
+    },
     "require-dev": {
-        "symfony/var-dumper": "^3.2"
+        "symfony/var-dumper": "^3.2",
+        "phpunit/phpunit": "^6.1"
     }
 }

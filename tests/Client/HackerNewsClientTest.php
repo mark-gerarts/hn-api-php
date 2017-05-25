@@ -37,4 +37,16 @@ class HackerNewsClientTest extends TestCase
 
         $this->assertInstanceOf(User::class, $client->getUser('username'));
     }
+
+    public function testGetMaxItem()
+    {
+        $mock = $this->createMock(HackerNewsServiceClient::class);
+        $mock->expects($this->any())
+            ->method('__call')
+            ->with('getMaxItem')
+            ->willReturn(new Result(['value' => 1234]));
+        $client = new HackerNewsClient($mock);
+
+        $this->assertEquals(1234, $client->getMaxItem());
+    }
 }

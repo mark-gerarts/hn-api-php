@@ -4,6 +4,7 @@ namespace HackerNewsApi\Service;
 
 use GuzzleHttp\Command\Guzzle\Description;
 use GuzzleHttp\Command\Guzzle\DescriptionInterface;
+
 /**
  * Class HackerNewsApiDescription
  *
@@ -29,7 +30,7 @@ final class HackerNewsApiDescription
                             'location' => 'uri'
                         ]
                     ],
-                    'responseModel' => 'singleResponse'
+                    'responseModel' => 'jsonResponse'
                 ],
                 'getUser' => [
                     'httpMethod' => 'GET',
@@ -40,16 +41,26 @@ final class HackerNewsApiDescription
                             'location' => 'uri'
                         ]
                     ],
-                    'responseModel' => 'singleResponse'
+                    'responseModel' => 'jsonResponse'
+                ],
+                'getMaxItem' => [
+                    'httpMethod' => 'GET',
+                    'uri' => 'maxitem.json',
+                    'responseModel' => 'scalar',
                 ]
             ],
 
             'models' => [
-                'singleResponse' => [
+                'jsonResponse' => [
                     'type' => 'object',
                     'additionalProperties' => [
                         'location' => 'json'
-                    ]
+                    ],
+                ],
+                'scalar' => [
+                    'type' => 'array',
+                    'name' => 'value',
+                    'location' => 'json'
                 ]
             ]
         ]);

@@ -54,7 +54,7 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getMaxItem(): int
     {
-        // TODO: Implement getMaxItem() method.
+        return $this->client->getMaxItem()->offsetGet('value');
     }
 
     /**

@@ -13,6 +13,7 @@ use GuzzleHttp\Command\ResultInterface;
  *
  * @method ResultInterface getItem(array $parameters)
  * @method ResultInterface getUser(array $parameters)
+ * @method ResultInterface getMaxItem()
  */
 class HackerNewsServiceClient extends GuzzleClient
 {

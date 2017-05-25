@@ -5,6 +5,7 @@ namespace HackerNewsApi\Tests\Client;
 use GuzzleHttp\Command\Result;
 use HackerNewsApi\Client\HackerNewsClient;
 use HackerNewsApi\Models\Item;
+use HackerNewsApi\Models\Updates;
 use HackerNewsApi\Models\User;
 use HackerNewsApi\Service\HackerNewsServiceClient;
 use PHPUnit\Framework\TestCase;
@@ -120,5 +121,17 @@ class HackerNewsClientTest extends TestCase
         $client = new HackerNewsClient($mock);
 
         $this->assertEquals([1, 2, 3], $client->getJobStories());
+    }
+
+    public function testGetUpdates()
+    {
+        $mock = $this->createMock(HackerNewsServiceClient::class);
+        $mock->expects($this->any())
+            ->method('__call')
+            ->with('getUpdates')
+            ->willReturn(new Result());
+        $client = new HackerNewsClient($mock);
+
+        $this->assertInstanceOf(Updates::class, $client->getUpdates());
     }
 }

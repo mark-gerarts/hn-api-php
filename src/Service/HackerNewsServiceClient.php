@@ -20,6 +20,7 @@ use GuzzleHttp\Command\ResultInterface;
  * @method ResultInterface getAskStories()
  * @method ResultInterface getShowStories()
  * @method ResultInterface getJobStories()
+ * @method ResultInterface getUpdates()
  */
 class HackerNewsServiceClient extends GuzzleClient
 {

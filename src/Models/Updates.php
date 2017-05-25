@@ -2,6 +2,8 @@
 
 namespace HackerNewsApi\Models;
 
+use HackerNewsApi\FromArray;
+
 /**
  * Class Updates
  *
@@ -9,6 +11,8 @@ namespace HackerNewsApi\Models;
  */
 class Updates
 {
+    use FromArray;
+
     /**
      * @var int[]
      */

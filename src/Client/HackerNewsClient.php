@@ -110,6 +110,8 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getUpdates(): Updates
     {
-        // TODO: Implement getUpdates() method.
+        $result = $this->client->getUpdates();
+
+        return Updates::fromArray($result->toArray());
     }
 }

@@ -23,7 +23,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "HackerNewsApi\\Tests": "tests/"
+            "HackerNewsApi\\Tests\\": ["tests/"]
         }
     },
     "require-dev": {

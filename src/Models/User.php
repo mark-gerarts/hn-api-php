@@ -76,7 +76,7 @@ class User
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAbout(): ?string
     {
@@ -84,7 +84,7 @@ class User
     }
 
     /**
-     * @return \int[]
+     * @return int[]
      */
     public function getSubmitted(): array
     {

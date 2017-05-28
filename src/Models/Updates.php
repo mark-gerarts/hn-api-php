@@ -24,7 +24,7 @@ class Updates
     private $profiles = [];
 
     /**
-     * @return \int[]
+     * @return int[]
      */
     public function getItems(): array
     {
@@ -32,7 +32,7 @@ class Updates
     }
 
     /**
-     * @return \string[]
+     * @return string[]
      */
     public function getProfiles(): array
     {

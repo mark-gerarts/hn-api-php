@@ -193,7 +193,7 @@ class Item
     }
 
     /**
-     * @return \int[]
+     * @return int[]
      */
     public function getParts(): array
     {

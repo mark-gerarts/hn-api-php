@@ -21,7 +21,7 @@ class HackerNewsClientTest extends TestCase
         $mock->expects($this->any())
             ->method('__call')
             ->with('getItem', [['id' => 12]])
-            ->willReturn(new Result());
+            ->willReturn(new Result(['id' => 12]));
         $client = new HackerNewsClient($mock);
 
         $this->assertInstanceOf(Item::class, $client->getItem(12));
@@ -33,7 +33,7 @@ class HackerNewsClientTest extends TestCase
         $mock->expects($this->any())
             ->method('__call')
             ->with('getUser', [['name' => 'username']])
-            ->willReturn(new Result());
+            ->willReturn(new Result(['id' => 12]));
         $client = new HackerNewsClient($mock);
 
         $this->assertInstanceOf(User::class, $client->getUser('username'));

@@ -3,8 +3,13 @@
 namespace HackerNewsApi\Service;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Command\CommandInterface;
+use GuzzleHttp\Command\Guzzle\Deserializer;
 use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Command\Result;
 use GuzzleHttp\Command\ResultInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class HackerNewsServiceClient
@@ -37,6 +42,24 @@ class HackerNewsServiceClient extends GuzzleClient
             ]
         ]);
 
-        return new static($client, $description);
+        $nullToEmptyResult = function(
+            ResponseInterface $response,
+            RequestInterface $request,
+            CommandInterface $command
+        ) use ($description) {
+            // The HN API returns status code 200 when the item isn't found,
+            // with "null" in the body. This causes the deserializer to bork,
+            // emitting a PHP warning (Invalid argument supplied for foreach).
+            // We'll intercept this here, and just return an empty Result
+            // ourselves.
+            if ($response->getBody()->getContents() === "null") {
+                return new Result();
+            }
+
+            $handler = new Deserializer($description, true);
+            return $handler($response, $request, $command);
+        };
+
+        return new static($client, $description, null, $nullToEmptyResult);
     }
 }

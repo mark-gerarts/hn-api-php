@@ -17,13 +17,13 @@ interface HackerNewsClientInterface
      * @param int $id
      * @return Item
      */
-    public function getItem(int $id): Item;
+    public function getItem(int $id): ?Item;
 
     /**
      * @param string $name
      * @return User
      */
-    public function getUser(string $name): User;
+    public function getUser(string $name): ?User;
 
     /**
      * @return int

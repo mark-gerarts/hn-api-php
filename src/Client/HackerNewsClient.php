@@ -32,21 +32,21 @@ class HackerNewsClient implements HackerNewsClientInterface
     /**
      * @inheritdoc
      */
-    public function getItem(int $id): Item
+    public function getItem(int $id): ?Item
     {
-        $result = $this->client->getItem(['id' => $id]);
+        $result = $this->client->getItem(['id' => $id])->toArray();
 
-        return Item::fromArray($result->toArray());
+        return empty($result) ? null : Item::fromArray($result);
     }
 
     /**
      * @inheritdoc
      */
-    public function getUser(string $name): User
+    public function getUser(string $name): ?User
     {
-        $result = $this->client->getUser(['name' => $name]);
+        $result = $this->client->getUser(['name' => $name])->toArray();
 
-        return User::fromArray($result->toArray());
+        return empty($result) ? null : User::fromArray($result);
     }
 
     /**
@@ -110,8 +110,6 @@ class HackerNewsClient implements HackerNewsClientInterface
      */
     public function getUpdates(): Updates
     {
-        $result = $this->client->getUpdates();
-
-        return Updates::fromArray($result->toArray());
+        return Updates::fromArray($this->client->getUpdates()->toArray());
     }
 }

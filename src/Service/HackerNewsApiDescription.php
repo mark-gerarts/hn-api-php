@@ -90,7 +90,7 @@ final class HackerNewsApiDescription
                     'type' => 'object',
                     'additionalProperties' => [
                         'location' => 'json'
-                    ],
+                    ]
                 ],
                 'scalar' => [
                     'type' => 'array',

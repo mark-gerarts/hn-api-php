@@ -8,7 +8,7 @@ experiment with [Guzzle services](https://github.com/guzzle/guzzle-services).
 The package is available through composer:
 
 ```Bash
-$ composer require mark-gerarts/hn-api-php
+$ composer require mgerarts/hn-api-php
 ```
 
 ## Usage

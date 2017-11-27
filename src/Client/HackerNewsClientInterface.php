@@ -31,32 +31,32 @@ interface HackerNewsClientInterface
     public function getMaxItem(): int;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getNewStories(): array;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getTopStories(): array;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getBestStories(): array;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getAskStories(): array;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getShowStories(): array;
 
     /**
-     * @return array
+     * @return int[]
      */
     public function getJobStories(): array;
 
